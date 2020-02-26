@@ -1,8 +1,9 @@
 # WebScraper
 
-## Web Crawler
-
 Look at https://blog.hartleybrody.com/web-scraping-cheat-sheet/ for help
+
+
+**Obsolete pseudocode**
 
 Pseudocode for getting contents of link:
 We have: a link to get contents of, its root, its robots.txt file and 
