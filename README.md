@@ -2,9 +2,11 @@
 
 Look at https://blog.hartleybrody.com/web-scraping-cheat-sheet/ for help
 
+Current file: Web_crawler, old copy: SearchEngine
+
 For now: loop to get links then loop on that to save them, when robots.txt works we can put everything together in one loop.
 
-Note that links are saved inside folder Documents_craled in the crawler's repository. 
+Note that links are saved inside folder Documents_craled in the crawler's repository, here saved inside data folder.
 
 
 ## Obsolete pseudocode
