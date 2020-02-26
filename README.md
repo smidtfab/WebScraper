@@ -2,8 +2,12 @@
 
 Look at https://blog.hartleybrody.com/web-scraping-cheat-sheet/ for help
 
+For now: loop to get links then loop on that to save them, when robots.txt works we can put everything together in one loop.
 
-**Obsolete pseudocode**
+Note that links are saved inside folder Documents_craled in the crawler's repository. 
+
+
+## Obsolete pseudocode
 
 Pseudocode for getting contents of link:
 We have: a link to get contents of, its root, its robots.txt file and 
