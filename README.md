@@ -9,29 +9,29 @@ For now: loop to get links then loop on that to save them, when robots.txt works
 Note that links are saved inside folder Documents_craled in the crawler's repository, here saved inside data folder.
 
 
-## Obsolete pseudocode
+## Pseudocode for big, final function:
 
-Pseudocode for getting contents of link:
-We have: a link to get contents of, its root, its robots.txt file and 
-l_servers: list of (server name, crawl_delay) (where crawl_delay = 20ms by default)
+Pseudocode: Crawler (nb_max_url, [URL], Domains, Links):
 
-if link's server is in l_servers: wait for (crawl_delay time)
+Get robots.txt url + domain 
+Save domain, robots.txt url and crawl delay if don't already have it
 
-if ("User-agent: \*" not in robots.txt): get full contents
-else:
-    line = 1st line under "User-agent: \*"
-    if ("User agent:\* \n Allow: \" in robots.txt; or "Allow: \" in line): get full contents of link
-    if ("User agent:\* \n Disallow: \" in robots.txt; or "Disallow: \" in line): break
-    else:
-        while ("Allow" in line) | ("Disallow" in line):
-            if "Allow" in line:
-                s = root + line - "Allow: "
-                if s in link: get full contents of link
-            if "Disallow" in line: 
-                s = root + line - "Disallow: "
-                if s in link: break
-            line = next line
-        # If we have reached end of specifications for crawlers without explicit allowance or disallowance for our
-        # url: get full contents 
-        if ("Allow" not in line) & ("Disallow" not in line):
-            get full contents of link
+If can fetch: 
+
+    If domain in domains & time crawled > 0:
+        Wait max(0, crawl delay - (current time - time crawled))
+    
+    Crawl: save contents 
+    Update time crawled
+    Save links if we still need more
+    Save in matrix domains line: domain, crawl delay (20ms if none), time crawled
+
+If haven't crawled enough links: repeat
+    
+Links = list of links we can crawl
+Domains: [domain, robots.txt link, crawl delay, time last crawled]
+(several links can have same domain)
+
+Auxiliary functions: extract up to M links from a page, new filename, save a link
+
+To be able to **wait for crawler delay time**, need functions get current time, wait a certain time (need to know units of said time!!!)
