@@ -1,0 +1,594 @@
+    <!doctype html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">
+    <!--<![endif]-->
+    <head>
+                <meta name="description" content="">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"e647a193b8",applicationID:"19467318"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="https://www.worldcocoafoundation.org/wp-content/themes/wcf/humans.txt"/>
+        <link rel="pingback" href="https://www.worldcocoafoundation.org/xmlrpc.php"/>
+        <title>404 | World Cocoa Foundation</title>
+
+
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.10.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.10.0';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-11423326-2';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-11423326-2', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'displayfeatures');
+		__gaTracker('send','pageview','/404.html?page=' + document.location.pathname + document.location.search + '&from=' + document.referrer);
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<link rel='stylesheet' id='typekit-css'  href='https://use.typekit.net/vxo6yug.css?ver=0.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='site-css'  href='https://www.worldcocoafoundation.org/wp-content/themes/wcf/assets/dist/site.min.css?ver=1584714897' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css'  href='https://www.worldcocoafoundation.org/wp-content/plugins/the-events-calendar/common/src/resources/css/common-skeleton.min.css?ver=4.11.0' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-tooltip-css'  href='https://www.worldcocoafoundation.org/wp-content/plugins/the-events-calendar/common/src/resources/css/tooltip.min.css?ver=4.11.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.worldcocoafoundation.org/wp-includes/css/dist/block-library/style.min.css?ver=5.3.2' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.worldcocoafoundation.org/wp-content/themes/wcf/assets/vendor/jquery/dist/jquery.min.js?ver=1584714897'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/www.worldcocoafoundation.org","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.worldcocoafoundation.org/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=7.10.0'></script>
+<link rel='https://api.w.org/' href='https://www.worldcocoafoundation.org/wp-json/' />
+<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://www.worldcocoafoundation.org"><link rel="https://theeventscalendar.com/" href="https://www.worldcocoafoundation.org/wp-json/tribe/events/v1/" />		<style type="text/css" id="wp-custom-css">
+			.video__title { color: #E16616; }		</style>
+		
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">        
+    </head>
+
+<body class="error404 tribe-no-js " data-template="base.twig">
+<div class="pixel"></div>
+<img src="https://www.worldcocoafoundation.org/wp-content/themes/wcf/assets/img/World-Cocoa-Foundation-Logo.png" alt="" class="forPrint printLogo">
+<div id="top" class="top">
+    <header class="header">
+                <nav class="nav">
+    <div class="contain contain--large">
+        <a href="#content" class="skip-link">Jump to Content</a>
+        <div class="nav-small" id="nav-small">
+            <button type="button" class="btn-nav" id="btn-nav">
+                <svg class="hb" height="25px" viewbox="0 0 25 25" width="25px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>Open Menu</title>
+                    <g fill="none" fill-rule="evenodd" id="TabBar-Icons" stroke="none" stroke-width="1">
+                        <g class="burger" id="Hamburger">
+                            <path d="M0,2 L25,2 L25,6 L0,6 L0,2 Z M0,10 L25,10 L25,14 L0,14 L0,10 Z M0,18 L25,18 L25,22 L0,22 L0,18 Z"/>
+                        </g>
+                    </g>
+                </svg>
+
+                <svg class="close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewbox="0 0 22 22">
+                    <defs>
+                        <path id="close1" d="M318.48 51.1l19.62-19.62c.45-.45 1.1-.49 1.5-.09.4.4.37 1.06-.08 1.5L319.9 52.53c-.45.45-1.1.49-1.5.09-.4-.4-.37-1.06.08-1.5"/>
+                        <path id="close2" d="M339.52 51.1L319.9 31.48c-.45-.45-1.1-.49-1.5-.09-.4.4-.37 1.06.08 1.5l19.62 19.63c.45.45 1.1.49 1.5.09.4-.4.37-1.06-.08-1.5"/>
+                    </defs>
+                    <g>
+                        <g transform="translate(-318 -31)">
+                            <use xlink:href="#close1"/>
+                        </g>
+                        <g transform="translate(-318 -31)">
+                            <use xlink:href="#close2"/>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <a href="/" class="wcf-logo wcf-logo--small">
+                <span class="a11y">World Cocoa Foundation</span>
+            </a>
+            <button type="button" class="search-btn search-btn--trigger">
+                <svg width="18" height="18" viewbox="0 0 18 18">
+                    <g>
+                        <g transform="translate(-1519 -30)">
+                            <use xlink:href="#2ra5a"/>
+                        </g>
+                    </g>
+                </svg>
+                <span class="a11y">Search</span>
+            </button>
+        </div>
+        <form class="sr-form search-main" action="/">
+            <button type="button" class="close-search">
+                <span class="a11y">Close Search</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="11" viewbox="0 0 11 11" aria-hidden="true">
+                    <g>
+                        <g transform="translate(-803 -1588)">
+                            <use xlink:href="#nz3na"></use>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <label for="s1" class="a11y">Search World Cocoa Foundation</label>
+            <div class="input-button">
+                <input type="text" id="s1" name="s" value="" placeholder="Search World Cocoa Foundation">
+                <button type="submit" class="search-btn">
+                    <svg width="18" height="18" viewbox="0 0 18 18">
+                        <g>
+                            <g transform="translate(-1519 -30)">
+                                <use xlink:href="#2ra5a"></use>
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="a11y">Search</span>
+                </button>
+            </div>
+        </form>
+        <div class="nav__contain" id="nav__contain">
+            <a href="/" class="wcf-logo wcf-logo--large">
+                <span class="a11y">World Cocoa Foundation</span>
+            </a>
+
+            <div class="nav__links">
+                <ul class="sub-nav">
+                                            <li class="sub-nav__item  menu-item menu-item-type-post_type menu-item-object-page menu-item-20215">
+                            <a  href="https://www.worldcocoafoundation.org/about-wcf/members/" class="sub-nav__link">Members</a>
+                        </li>
+                                            <li class="sub-nav__item  menu-item menu-item-type-custom menu-item-object-custom menu-item-15351">
+                            <a  href="/event/wcfpm/" class="sub-nav__link">Partnership Meeting</a>
+                        </li>
+                                        <li class="sub-nav__item">
+                        <ul class="social-links">
+                                                            <li class="social-links__item">
+                                    <a href="http://twitter.com/WorldCocoa" class="social-links__link">
+                                        <span class="a11y">Twitter</span>
+                                        <span class="social" aria-hidden="true">L</span>
+                                    </a>
+                                </li>
+                                                                                        <li class="social-links__item">
+                                    <a href="http://www.facebook.com/pages/World-Cocoa-Foundation/122212417404" class="social-links__link">
+                                        <span class="a11y">Facebook</span>
+                                        <span class="social" aria-hidden="true">F</span>
+                                    </a>
+                                </li>
+                                                                                        <li class="social-links__item">
+                                    <a href="https://www.linkedin.com/company/world-cocoa-foundation/" class="social-links__link">
+                                        <span class="a11y">LinkedIn</span>
+                                        <span class="social" aria-hidden="true">I</span>
+                                    </a>
+                                </li>
+                                                                                        <li class="social-links__item">
+                                    <a href="http://www.youtube.com/user/WorldCocoa" class="social-links__link">
+                                        <span class="a11y">YouTube</span>
+                                        <span class="social" aria-hidden="true">X</span>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                    <li class="sub-nav__item">
+                        <div id="google_translate_header"></div>
+                    </li>
+                    <li class="sub-nav__item sub-nav__item--search">
+                        <button type="button" class="search-btn search-btn--trigger">
+                            <svg width="18" height="18" viewbox="0 0 18 18">
+                                <g>
+                                    <g transform="translate(-1519 -30)">
+                                        <use xlink:href="#2ra5a"/>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="a11y">Search</span>
+                        </button>
+                    </li>
+                </ul>
+                                                    
+                    <ul class="main-nav">
+                                                                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14983 main-nav__item">
+                                                                    <a  href="https://www.worldcocoafoundation.org/cocoa-updates/" class="main-nav__link">Cocoa Updates</a>
+                                                                </li>
+                                                                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14982 menu-item-has-children main-nav__item">
+                                                                    <div class="sub-nav__wrap">
+                                                                        <a  href="https://www.worldcocoafoundation.org/focus-areas/" class="main-nav__link">Focus Areas</a>
+                                                                            <button type="button" class="sub-nav__toggle">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="352" height="448" viewbox="0 0 352 448" class="minus-icon">
+                                                <path d="M352 184v48c0 13.25-10.75 24-24 24h-304c-13.25 0-24-10.75-24-24v-48c0-13.25 10.75-24 24-24h304c13.25 0 24 10.75 24 24z"></path>
+                                            </svg>
+
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="352" height="448" viewbox="0 0 352 448" class="plus-icon">
+                                                <path d="M352 184v48c0 13.25-10.75 24-24 24h-104v104c0 13.25-10.75 24-24 24h-48c-13.25 0-24-10.75-24-24v-104h-104c-13.25 0-24-10.75-24-24v-48c0-13.25 10.75-24 24-24h104v-104c0-13.25 10.75-24 24-24h48c13.25 0 24 10.75 24 24v104h104c13.25 0 24 10.75 24 24z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <ul class="main-drop">
+			<li class=" menu-item menu-item-type-post_type menu-item-object-focus-areas menu-item-20388 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/focus-areas/farmer-livelihoods/" class="main-drop__link">Farmer Livelihoods</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-focus-areas menu-item-20390 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/focus-areas/community-empowerment/" class="main-drop__link">Community Empowerment</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-focus-areas menu-item-20387 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/focus-areas/human-rights/" class="main-drop__link">Human Rights</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-focus-areas menu-item-20389 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/focus-areas/environment/" class="main-drop__link">Environment</a>
+		</li>
+	</ul>
+                                                            </li>
+                                                                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14984 menu-item-has-children main-nav__item">
+                                                                    <div class="sub-nav__wrap">
+                                                                        <a  href="https://www.worldcocoafoundation.org/about-wcf/" class="main-nav__link">About WCF</a>
+                                                                            <button type="button" class="sub-nav__toggle">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="352" height="448" viewbox="0 0 352 448" class="minus-icon">
+                                                <path d="M352 184v48c0 13.25-10.75 24-24 24h-304c-13.25 0-24-10.75-24-24v-48c0-13.25 10.75-24 24-24h304c13.25 0 24 10.75 24 24z"></path>
+                                            </svg>
+
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="352" height="448" viewbox="0 0 352 448" class="plus-icon">
+                                                <path d="M352 184v48c0 13.25-10.75 24-24 24h-104v104c0 13.25-10.75 24-24 24h-48c-13.25 0-24-10.75-24-24v-104h-104c-13.25 0-24-10.75-24-24v-48c0-13.25 10.75-24 24-24h104v-104c0-13.25 10.75-24 24-24h48c13.25 0 24 10.75 24 24v104h104c13.25 0 24 10.75 24 24z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <ul class="main-drop">
+			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-24775 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/about-wcf/vision-mission/" class="main-drop__link">Vision &#038; Mission</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-20737 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/about-wcf/history/" class="main-drop__link">History</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-19247 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/about-wcf/members/" class="main-drop__link">Our Members</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-20560 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/about-wcf/governance/" class="main-drop__link">Governance</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-19253 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/about-wcf/meet-our-team/" class="main-drop__link">Meet Our Team</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-15357 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/work-with-wcf/" class="main-drop__link">Work with WCF</a>
+		</li>
+	</ul>
+                                                            </li>
+                                                                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-14981 menu-item-has-children main-nav__item">
+                                                                    <div class="sub-nav__wrap">
+                                                                        <a  href="https://www.worldcocoafoundation.org/initiatives/" class="main-nav__link">Initiatives</a>
+                                                                            <button type="button" class="sub-nav__toggle">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="352" height="448" viewbox="0 0 352 448" class="minus-icon">
+                                                <path d="M352 184v48c0 13.25-10.75 24-24 24h-304c-13.25 0-24-10.75-24-24v-48c0-13.25 10.75-24 24-24h304c13.25 0 24 10.75 24 24z"></path>
+                                            </svg>
+
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="352" height="448" viewbox="0 0 352 448" class="plus-icon">
+                                                <path d="M352 184v48c0 13.25-10.75 24-24 24h-104v104c0 13.25-10.75 24-24 24h-48c-13.25 0-24-10.75-24-24v-104h-104c-13.25 0-24-10.75-24-24v-48c0-13.25 10.75-24 24-24h104v-104c0-13.25 10.75-24 24-24h48c13.25 0 24 10.75 24 24v104h104c13.25 0 24 10.75 24 24z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <ul class="main-drop">
+			<li class=" menu-item menu-item-type-post_type menu-item-object-initiative menu-item-20393 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/initiative/cocoa-forests-initiative/" class="main-drop__link">Cocoa &#038; Forests Initiative</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-initiative menu-item-20391 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/initiative/cocoaaction/" class="main-drop__link">CocoaAction</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-initiative menu-item-20392 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/initiative/cocoa-livelihoods-program/" class="main-drop__link">Cocoa Livelihoods Program</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-initiative menu-item-20395 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/initiative/african-cocoa-initiative-ii/" class="main-drop__link">African Cocoa Initiative II</a>
+		</li>
+			<li class=" menu-item menu-item-type-post_type menu-item-object-initiative menu-item-20394 main-drop__item">
+			<a  href="https://www.worldcocoafoundation.org/initiative/climate-smart-cocoa/" class="main-drop__link">Climate Smart Cocoa</a>
+		</li>
+	</ul>
+                                                            </li>
+                                            </ul>
+                
+            </div>
+        </div>
+    </div>
+</nav>    </header>
+
+    <main id="content" class="main content-wrapper " tabindex="-1">
+
+            <div class="contain">
+            <h1>404 page not found</h1>
+            <div class="wysiwyg">
+                <p>Sorry, we couldn't find what you're looking for.</p>
+            </div>
+
+            <form role="search" method="get" class="search-page" action="https://www.worldcocoafoundation.org">
+                <label class="listing__label">
+                    <span>Search:</span>
+                    <svg width="18" height="18" viewbox="0 0 14 14" class="listing__svg">
+                        <g>
+                            <g transform=" translate(-323 -125)" ="translate(-323 -125)">
+                                <use xlink:href="#magnify" fill="#00ced1"/>
+                            </g>
+                        </g>
+                    </svg>
+                    <input type="text" class="listing__input" value="" name="s" placeholder="" autocomplete="off">
+                </label>
+
+                <button type="submit" class="btn btn--primary">Submit</button>
+            </form>
+        </div>
+    </div>
+            </main>
+    <div class="prefooter">
+            </div>
+            <footer id="footer" class="footer">
+            <div class="newsletter gradient">
+    <div class="newsletter__content">
+        <h2 class="newsletter__title">Subscribe to our Newsletter</h2>
+        <p>Sign up to receive WCF's monthly newsletter and other cocoa sustainability updates.</p>
+                            <div class="input-button input-button--ib">
+                <a href="http://eepurl.com/c2QiNH" class="btn btn--stroke">Subscribe Now</a>
+            </div>
+            </div>
+</div>
+
+<div class="footer__row footer__row--main">
+    <div class="contain">
+        <a href="/" class="footer__logo">
+            <span class="a11y">World Coacoa Foundation</span>
+        </a>
+        <div class="footer__content">
+
+            
+            <ul class="footer__menu">
+                                    <li class="footer__item  menu-item menu-item-type-post_type menu-item-object-page menu-item-20846 ">
+                        <a  href="https://www.worldcocoafoundation.org/blog/" class="footer__link }">Blogs</a>
+                    </li>
+                                    <li class="footer__item  menu-item menu-item-type-custom menu-item-object-custom menu-item-15354 ">
+                        <a  href="/event" class="footer__link }">Events</a>
+                    </li>
+                                    <li class="footer__item  menu-item menu-item-type-post_type menu-item-object-page menu-item-20844 ">
+                        <a  href="https://www.worldcocoafoundation.org/about-wcf/governance/" class="footer__link }">Governance</a>
+                    </li>
+                                    <li class="footer__item  menu-item menu-item-type-post_type menu-item-object-page menu-item-20845 ">
+                        <a  href="https://www.worldcocoafoundation.org/about-wcf/meet-our-team/" class="footer__link }">Meet Our Team</a>
+                    </li>
+                                    <li class="footer__item  menu-item menu-item-type-post_type menu-item-object-page menu-item-15353 ">
+                        <a  href="https://www.worldcocoafoundation.org/work-with-wcf/" class="footer__link }">Work with WCF</a>
+                    </li>
+                                    <li class="footer__item  menu-item menu-item-type-post_type menu-item-object-page menu-item-20843 ">
+                        <a  href="https://www.worldcocoafoundation.org/press-release/" class="footer__link }">Press Releases</a>
+                    </li>
+                                    <li class="footer__item  menu-item menu-item-type-post_type menu-item-object-page menu-item-20978 ">
+                        <a  href="https://www.worldcocoafoundation.org/about-wcf/contact/" class="footer__link }">Contact</a>
+                    </li>
+                
+                <li class="footer__item">
+                    <div id="google_translate_footer"></div>
+                </li>
+            </ul>
+
+            <p class="copyright copyright--large">&copy; Copyright
+                World Cocoa Foundation. All Rights Reserved</p>
+        </div>
+        <ul class="social-links">
+                            <li class="social-links__item">
+                    <a href="http://twitter.com/WorldCocoa" class="social-links__link">
+                        <span class="a11y">Twitter</span>
+                        <span class="social" aria-hidden="true">L</span>
+                    </a>
+                </li>
+                                        <li class="social-links__item">
+                    <a href="http://www.facebook.com/pages/World-Cocoa-Foundation/122212417404" class="social-links__link">
+                        <span class="a11y">Facebook</span>
+                        <span class="social" aria-hidden="true">F</span>
+                    </a>
+                </li>
+                                        <li class="social-links__item">
+                    <a href="https://www.linkedin.com/company/world-cocoa-foundation/" class="social-links__link">
+                        <span class="a11y">LinkedIn</span>
+                        <span class="social" aria-hidden="true">I</span>
+                    </a>
+                </li>
+                                        <li class="social-links__item">
+                    <a href="http://www.youtube.com/user/WorldCocoa" class="social-links__link">
+                        <span class="a11y">YouTube</span>
+                        <span class="social" aria-hidden="true">X</span>
+                    </a>
+                </li>
+                                </ul>
+
+        <p class="copyright copyright--small">&copy; Copyright
+            World Cocoa Foundation. All Rights Reserved</p>
+    </div>
+</div>        </footer>
+        		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><script type='text/javascript' src='https://www.worldcocoafoundation.org/wp-content/themes/wcf/assets/dist/select2.min.js?ver=1584714897'></script>
+<script type='text/javascript' src='https://www.worldcocoafoundation.org/wp-content/themes/wcf/assets/vendor/bows/dist/bows.min.js?ver=1584714897'></script>
+<script type='text/javascript' src='https://www.worldcocoafoundation.org/wp-content/themes/wcf/assets/vendor/object-fit-images/dist/ofi.min.js?ver=1584714897'></script>
+<script type='text/javascript' src='https://www.worldcocoafoundation.org/wp-content/themes/wcf/assets/dist/site.min.js?ver=1584714897'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sta_settings = {"distance":"50","speed":"1000","exceptions":".event-tabs"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.worldcocoafoundation.org/wp-content/plugins/scroll-to-anchor/includes/../js/scroll-to-anchor.min.js?ver=5.3.2'></script>
+
+    
+</div>
+<script>
+    function onYouTubeIframeAPIReady() {
+        wdg_youtube_apiReady();
+    }
+</script>
+    <script>
+        window.site = new Site();
+    </script>
+<div class="svgs">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewbox="0 0 18 18">
+        <defs>
+            <path id="2ra5a" d="M1531.33 37.39c0 2.7-2.23 4.94-4.94 4.94a4.9 4.9 0 0 1-4.86-4.94c0-2.7 2.23-4.94 4.94-4.94a4.9 4.9 0 0 1 4.86 4.94zm4.61 8.2l-4.06-4.06a6.97 6.97 0 0 0 1.36-4.14 6.85 6.85 0 1 0-6.85 6.85c1.51 0 2.94-.48 4.14-1.36l3.98 3.98c.16.24.4.32.72.32.24 0 .47-.08.71-.32a1 1 0 0 0 .32-.71c0-.32-.08-.4-.32-.56z"/>
+        </defs>
+        <g>
+            <g transform="translate(-1519 -30)">
+                <use fill="#7c8d1c" xlink:href="#2ra5a"/></g>
+        </g>
+    </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="17" viewbox="0 0 18 17">
+        <defs>
+            <path id="xnfpa" d="M476.47 880.28a.91.91 0 0 0-.34-.72l-.03-.03-6.62-6.81a.86.86 0 0 0-1.24 0 .93.93 0 0 0 0 1.28l5.22 5.37h-13.14a.9.9 0 0 0-.88.9c0 .5.4.91.88.91h13.14l-5.32 5.49a.93.93 0 0 0 0 1.28c.34.35.9.35 1.24 0l6.6-6.81a.88.88 0 0 0 .08-.09l.02-.03.03-.02a.9.9 0 0 0 .36-.72"/></defs>
+        <g>
+            <g clip-path="url(#clip-80C86CFC-51C5-4D03-BF6D-99DFF17930F8)" transform="translate(-460 -872)">
+                <use fill="#c25813" xlink:href="#xnfpa"/>
+            </g>
+        </g>
+    </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="11" viewbox="0 0 11 11">
+        <defs>
+            <path id="hfjaa" d="M502.95 2802.47a.96.96 0 0 1-.95-.97c0-.53.43-.97.95-.97h6.93l-2.75-2.92a.88.88 0 0 1 0-1.21l.13-.14a.77.77 0 0 1 1.15 0l4.35 4.61c.16.18.25.41.24.64 0 .22-.08.45-.24.63l-4.35 4.6a.77.77 0 0 1-1.15 0l-.13-.14a.88.88 0 0 1 0-1.2l2.76-2.93z"/>
+        </defs>
+        <g>
+            <g transform="translate(-502 -2796)">
+                <g transform="matrix(-1 0 0 1 1015 0)">
+                    <g>
+                        <use xlink:href="#hfjaa"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41" height="41" viewbox="0 0 41 41">
+        <defs>
+            <path id="8tona" d="M322.5 4501.73a18.22 18.22 0 1 0 0-36.45 18.22 18.22 0 0 0 0 36.45zm0 1.95a20.17 20.17 0 1 1 0-40.35 20.17 20.17 0 0 1 0 40.35z"/>
+            <path id="8tonb" d="M328.03 4483.24l-9.66 5.74v-11.48z"/>
+        </defs>
+        <g>
+            <g transform="translate(-302 -4463)">
+                <use fill="#fff" xlink:href="#8tona"/>
+            </g>
+            <g transform="translate(-302 -4463)">
+                <use fill="#fff" xlink:href="#8tonb"/>
+            </g>
+        </g>
+    </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="20" viewbox="0 0 21 20">
+        <defs><path id="gxvxa" d="M200 572.73l.69-.72 7.66 7.17 7.66-7.17.69.73-7.62 7.13 7.6 7.14-.68.72-7.66-7.18-7.65 7.17-.69-.73 7.61-7.12z"/></defs>
+        <g>
+            <g transform="translate(-198 -570)">
+                <use fill="#7c8d1c" xlink:href="#gxvxa"/>
+                <use fill="#fff" fill-opacity="0" stroke="#7c8d1c" stroke-miterlimit="50" stroke-width="2" xlink:href="#gxvxa"/>
+            </g>
+        </g>
+    </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="11" viewbox="0 0 11 11">
+        <defs>
+            <path id="nz3na" d="M811.2 1588.78l2.02 2.02-2.7 2.7 2.7 2.7-2.02 2.02-2.7-2.7-2.7 2.7-2.02-2.02 2.7-2.7-2.7-2.7 2.02-2.02 2.7 2.7z"/>
+        </defs>
+        <g>
+            <g transform="translate(-803 -1588)">
+                <use fill="#e16616" xlink:href="#nz3na"/>
+            </g>
+        </g>
+    </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="28" id="icon-plus" viewbox="0 0 22 28">
+        <def>
+            <path d="M22 11.5v3c0 0.828-0.672 1.5-1.5 1.5h-6.5v6.5c0 0.828-0.672 1.5-1.5 1.5h-3c-0.828 0-1.5-0.672-1.5-1.5v-6.5h-6.5c-0.828 0-1.5-0.672-1.5-1.5v-3c0-0.828 0.672-1.5 1.5-1.5h6.5v-6.5c0-0.828 0.672-1.5 1.5-1.5h3c0.828 0 1.5 0.672 1.5 1.5v6.5h6.5c0.828 0 1.5 0.672 1.5 1.5z"></path>
+        </def>
+    </svg>
+</div>
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr,pt,id,ja,es',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_header');
+    }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e647a193b8","applicationID":"19467318","transactionName":"YwdUYEYFW0dUUxAMWlpNd1dADVpaGgRUUQ==","queueTime":0,"applicationTime":646,"atts":"T0BXFg4fSEk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
